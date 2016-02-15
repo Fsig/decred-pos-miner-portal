@@ -3,7 +3,7 @@ date_default_timezone_set('Australia/Brisbane');
 header('Content-type: text/html; charset=UTF-8');
 include_once("./includes/config.inc.php");
 include_once("./includes/core.inc.php");
-include_once("./api.php");
+include_once("./functions/api.php");
 
 //Initialise the API
 API::initialise();
