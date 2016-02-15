@@ -50,4 +50,9 @@ function mempty(){
             return false;
     return true;
 }
+
+//Function to sort json object by time
+function sortByTime($a, $b){
+        return $b->{'time'} - $a->{'time'};
+}
 ?>

@@ -4,7 +4,6 @@ $balance = API::getBalance();
 $balance_all = API::getBalanceAll();
 $ticket_count = API::getTicketCount();
 $relayfee = API::getRelayFee();
-$tickets = API::getTickets();
 ?>		
 		    
 		<section class="light">
@@ -32,7 +31,7 @@ $tickets = API::getTickets();
 				
 				<div class="raw-stat single-box">
 					<h1>Tickets</h1>
-					<label for="show-tickets" class="show-tickets" title="Show ticket hashes"></label>
+					<label for="show-tickets" class="show-tickets" title="Show tickets"></label>
 					<input type="checkbox" id="show-tickets" name="show-tickets"/>
 					
 					<div class="stat-wrapper">
@@ -52,28 +51,8 @@ $tickets = API::getTickets();
 
 					<div class="cb"></div>
 					
-					<div class="ticket-wrapper">
-						<table>
-							<thead>
-								<tr>
-									<th>Ticket Hashes</th>
-								</tr>
-							</thead>
-							
-							<tbody>
-							<?php foreach($tickets as $ticket){ ?>
-								
-								<tr>
-									<td>
-										<a target="_blank" href="https://mainnet.decred.org/tx/<?php echo $ticket; ?>"><?php echo $ticket; ?></a>
-									</td>
-								</tr>
-							<?php } ?>
-							
-							</tbody>
-							
-							<tfoot></tfoot>
-						</table>
+					<div id="transactions" class="ticket-wrapper">
+						
 					</div>
 				</div>
 			</div>

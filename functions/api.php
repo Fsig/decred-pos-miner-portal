@@ -14,8 +14,11 @@ class API {
 	 * Setup variables based on the config file.
 	 * */
 	public static function initialise() {
-		self::$dcrd_certificate = " --rpccert='" . DCRDCERT . "' ";
-		self::$wallet_certificate = " --rpccert='" . WALLETCERT . "' ";
+		if(file_exists(DCRDCERT)) $dcrdcert = DCRDCERT; else $dcrdcert = "." . DCRDCERT;
+		if(file_exists(WALLETCERT)) $walletcert = WALLETCERT; else $walletcert = "." . WALLETCERT;
+		
+		self::$dcrd_certificate = " --rpccert='" . $dcrdcert . "' ";
+		self::$wallet_certificate = " --rpccert='" . $walletcert . "' ";
 		self::$base_cmd = DCRCTLLOCATION . " -u " . USERNAME . " -P '" . PASSWORD . "'";
 		self::$end_cmd = " 2>&1";
     }
@@ -73,7 +76,14 @@ class API {
 	 * Get tickets
 	 * */
 	public static function getTicketCount() {
-		return count(explode(",",self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet gettickets 1" . self::$end_cmd))) -1;
+		return count(json_decode(self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet gettickets 1" . self::$end_cmd))->{'hashes'});
+	}
+	
+	/**
+	 * Get transaction
+	 * */
+	public static function getTransaction($transhash) {
+		return self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet gettransaction " . $transhash . self::$end_cmd);
 	}
 	
 	/**
