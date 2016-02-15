@@ -17,7 +17,7 @@ $relayfee = API::getRelayFee();
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo ($balance - $balance_all); ?></h5>
+						<h5><?php echo ($balance_all - $balance); ?></h5>
 						<span class="normal-font">Locked</span>
 					</div>
 							
