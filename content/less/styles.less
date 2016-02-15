@@ -1,0 +1,322 @@
+
+/*============================================================*\
+
+	#Imports
+
+\*============================================================*/
+
+/* Variables for the project */
+@import (less) "_variables.less";
+
+/* Fonts for the project */
+@import (less) "_fonts.less";
+
+/* Normalize makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing. */
+@import (less) "_normalize.less";
+
+/* Resets */
+@import (less) "_resets.less";
+
+
+
+/*============================================================*\
+
+	#Navigation
+
+\*============================================================*/
+
+nav {
+	font-size: 2.0em;
+	line-height: 1.6em;
+	width: 100%;
+	height: 30px;
+	color: #FFFFFF;
+	padding: 0px 10px 0px 10px;
+}
+
+nav a {
+	position: relative;
+	text-decoration: none;
+	color: #FFFFFF;
+	-webkit-tap-highlight-color: transparent;
+}
+
+.mainnav {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #222222;
+}
+
+.nav {
+	width: 100%;
+	margin: 0 auto;
+	background-color: #222222;
+}
+
+.mainnav-wrapper {
+	width: 100%;
+	margin: 0 auto;
+}
+
+
+
+.nav-block {
+	float: left;
+}
+
+.nav-block:before {
+	content: url("../images/block.png");
+}
+
+.nav-ticket {
+	float: right;
+}
+
+.nav-ticket:before {
+	content: url("../images/ticket.png");
+}
+
+
+/*============================================================*\
+
+	#Content
+
+\*============================================================*/
+
+.stat-wrapper {
+	float: left;
+	width: 33.3%;
+}	
+
+.raw-stat {
+	width: auto;
+	text-align: center;
+	background-color: #FFFFFF;
+	padding: 10px;
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+}
+
+.multi-box {
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+
+.single-box {
+	margin-bottom: 10px;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 10px;
+	position: relative;
+	font-size: 1.2em;
+}
+
+/*============================================================*\
+
+	#Table
+
+\*============================================================*/
+
+.show-tickets {
+	float: right;
+    margin-top: -80px;
+	
+	background: url("../images/show.png") no-repeat;
+    height: 32px;
+    width: 32px;
+    
+    cursor: pointer;
+	cursor: hand;
+    
+    -webkit-box-sizing: content-box; 
+    -moz-box-sizing: content-box; 
+    box-sizing: content-box;
+}
+
+input[type=checkbox]{
+    display: none;
+}
+
+input[type=checkbox]:checked ~ .ticket-wrapper {
+    display: block;
+}
+
+.ticket-wrapper {
+	display: none;
+	width: 100%;
+	padding: 30px 0px 0px 0px;
+}
+
+table {
+	width: 100%;
+	padding: 10px;	
+	
+	-webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), 0 0 0 1px rgba(63, 63, 68, 0.1);
+}
+
+th {
+	background-color: @heading-primary;
+	text-align: center;
+	padding: 10px;
+	font-size: 1.6em;
+	font-weight: bold;
+	color: #ffffff;
+	
+	-webkit-border-radius: 5px 5px 0px 0px;
+    -moz-border-radius: 5px 5px 0px 0px;
+    border-radius: 5px 5px 0px 0px;
+}
+
+td {
+	vertical-align: middle;
+	text-align: center;
+	padding: 10px;
+	font-size: 1.4em;
+	color: @primary-text-color;
+	word-break: break-all;
+}
+
+/*============================================================*\
+
+	#Footer
+
+\*============================================================*/
+
+
+footer {
+	width: 100%;
+	height: 100%;
+	background-color: @footer-background;
+	color: @footer-text;
+	font-size: 1.4em;
+	line-height: 1.6em;
+	-webkit-box-shadow: inset 0px 0px 10px 3px rgba(0,0,0,0.75);
+	-moz-box-shadow: inset 0px 0px 10px 3px rgba(0,0,0,0.75);
+	box-shadow: inset 0px 0px 10px 3px rgba(0,0,0,0.75);
+}
+
+footer a, footer a:visited {
+	color: @footer-links;
+	text-decoration: none;
+	font-size: 1.2em;
+	line-height: 1.2em;
+	-webkit-transition: .3s ease-in-out;
+	-moz-transition: .3s ease-in-out;
+	-o-transition: .3s ease-in-out;
+	-ms-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+footer a:hover {
+	color: @heading-primary;
+}
+
+.footer-content {
+	padding: 10px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+footer ul {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+}
+
+footer ul li {
+	display: inline; 
+	padding: 0px 60px 0px 60px;
+}
+
+.footer-nav {
+	text-align: center;
+	padding: 0px 0px 0px 0px;
+}
+
+.footer-nav a, .footer-nav a:visited {
+	font-weight: normal;
+	color: @footer-text;
+}
+
+.footer-nav a:hover {
+	color: @heading-primary;
+}
+
+/*============================================================*\
+
+	#Utility Classes
+
+\*============================================================*/
+
+.fl { float: left; }
+.fr { float: right; }
+.fc { float: none; margin-left: auto; margin-right: auto; }
+.fn { float: none; }
+
+.tl { text-align: left; }
+.tc { text-align: center; }
+.tr { text-align: right; }
+
+.cl { clear: left; }
+.cr { clear: right; }
+.cb { clear: both; }
+.cn { clear: none; }
+
+.bold { font-weight: bold; }
+
+
+/*============================================================*\
+
+	#Media Queries
+
+\*============================================================*/
+
+@media only screen and (max-width: 600px) {	
+	h1 {
+		font-size: 2.8em;
+	}	
+	
+	h5 {
+		font-size: 1.4em;
+	}
+	
+	.show-tickets {
+		margin-top: -50px;
+    }
+    
+    footer ul li {
+		padding: 0px 20px 0px 20px;
+	}
+}
+
+@media only screen and (min-width: 1200px) {
+	.mainnav-wrapper {
+		width: 1200px;
+	}
+	
+	.container {
+		width: 1200px;
+	}
+	
+	.footer-content {
+		width: 1200px;
+	}
+}
