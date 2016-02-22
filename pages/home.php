@@ -45,7 +45,7 @@ $relayfee = API::getRelayFee();
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 1.85) : "0"; ?></h5>
+						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 3.87174959) : "0"; ?></h5>
 						<span class="normal-font">Estimated worth</span>
 					</div>
 
