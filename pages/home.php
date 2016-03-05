@@ -3,13 +3,22 @@
 $balance = API::getBalance();
 $balance_all = API::getBalanceAll();
 $ticket_count = API::getTicketCount();
-$relayfee = API::getRelayFee();
+$walletfee = API::getWalletFee();
+
+$live = API::getStakeInfo()->{'live'};
+$voted = API::getStakeInfo()->{'voted'};
+$missed = API::getStakeInfo()->{'missed'};
+
+$revoked = API::getStakeInfo()->{'revoked'};
+$proportionmissed = API::getStakeInfo()->{'proportionmissed'};
+$totalsubsidy = API::getStakeInfo()->{'totalsubsidy'};
+
 ?>		
 		    
 		<section class="light">
 			<div class="container">
 				<div class="raw-stat single-box">
-					<h1>Balance</h1>
+					<h2>Balance</h2>
 							
 					<div class="stat-wrapper">
 						<h5><?php echo $balance; ?></h5>
@@ -30,7 +39,46 @@ $relayfee = API::getRelayFee();
 				</div>
 				
 				<div class="raw-stat single-box">
-					<h1>Tickets</h1>
+					<h2>Info</h2>					
+					<div class="stat-wrapper">
+						<h5><?php echo $live; ?></h5>
+						<span class="normal-font">Live</span>
+					</div>
+							
+					<div class="stat-wrapper">
+						<h5><?php echo $voted ?></h5>
+						<span class="normal-font">Voted</span>
+					</div>
+							
+					<div class="stat-wrapper">
+						<h5><?php echo $missed; ?></h5>
+						<span class="normal-font">Missed</span>
+					</div>
+					
+					<div class="cb"></div>
+					<br/>
+					<br/>
+					
+					<div class="stat-wrapper">
+						<h5><?php echo $revoked; ?></h5>
+						<span class="normal-font">Revoked</span>
+					</div>
+							
+					<div class="stat-wrapper">
+						<h5><?php echo $proportionmissed; ?></h5>
+						<span class="normal-font">Missed Subsidy</span>
+					</div>
+							
+					<div class="stat-wrapper">
+						<h5><?php echo $totalsubsidy; ?></h5>
+						<span class="normal-font">Total Subsidy</span>
+					</div>
+
+					<div class="cb"></div>
+				</div>
+				
+				<div class="raw-stat single-box">
+					<h2>Tickets</h2>
 					<label for="show-tickets" class="show-tickets" title="Show tickets"></label>
 					<input type="checkbox" id="show-tickets" name="show-tickets"/>
 					
@@ -40,12 +88,12 @@ $relayfee = API::getRelayFee();
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo -($ticket_count * $relayfee); ?></h5>
+						<h5><?php echo -($ticket_count * $walletfee); ?></h5>
 						<span class="normal-font">Fees</span>
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 3.87174959) : "0"; ?></h5>
+						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 1.788354808) : "0"; ?></h5>
 						<span class="normal-font">Estimated worth</span>
 					</div>
 

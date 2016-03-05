@@ -19,7 +19,7 @@ class API {
 		
 		self::$dcrd_certificate = " --rpccert='" . $dcrdcert . "' ";
 		self::$wallet_certificate = " --rpccert='" . $walletcert . "' ";
-		self::$base_cmd = DCRCTLLOCATION . " -u " . USERNAME . " -P '" . PASSWORD . "'";
+		self::$base_cmd = DCRCTLLOCATION . " -u '" . USERNAME . "' -P '" . PASSWORD . "'";
 		self::$end_cmd = " 2>&1";
     }
 	
@@ -41,7 +41,7 @@ class API {
 	 * Get stake difficulty
 	 * */
 	public static function getStakeDifficulty() {
-		return json_decode(self::execute(self::$base_cmd . self::$dcrd_certificate . "getstakedifficulty" . self::$end_cmd))->{'difficulty'};
+		return self::execute(self::$base_cmd . self::$dcrd_certificate . "getstakedifficulty" . self::$end_cmd);
 	}
 	 
 	 /**
@@ -49,6 +49,13 @@ class API {
 	  * */
 	public static function getRelayFee() {
 		return json_decode(self::execute(self::$base_cmd . self::$dcrd_certificate . "getinfo" . self::$end_cmd))->{'relayfee'};
+	}
+	
+	/**
+	 * Get wallet fee
+	 * */
+	public static function getWalletFee() {
+		return json_decode(self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet getinfo" . self::$end_cmd))->{'paytxfee'};
 	}
 	
 	/**
@@ -84,6 +91,13 @@ class API {
 	 * */
 	public static function getTransaction($transhash) {
 		return self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet gettransaction " . $transhash . self::$end_cmd);
+	}
+	
+	/**
+	 * Get stake info
+	 * */
+	public static function getStakeInfo() {
+		return json_decode(self::execute(self::$base_cmd . self::$wallet_certificate . "--wallet getstakeinfo" . self::$end_cmd));
 	}
 	
 	/**
