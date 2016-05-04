@@ -88,12 +88,12 @@ $totalsubsidy = API::getStakeInfo()->{'totalsubsidy'};
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo -($ticket_count * $walletfee); ?></h5>
+						<h5><?php echo ($ticket_count * $walletfee); ?></h5>
 						<span class="normal-font">Fees</span>
 					</div>
 							
 					<div class="stat-wrapper">
-						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 1.788354808) : "0"; ?></h5>
+						<h5><?php echo $ticket_count > 0  ? ($ticket_count * 1.844216445) : "0"; ?></h5>
 						<span class="normal-font">Estimated worth</span>
 					</div>
 

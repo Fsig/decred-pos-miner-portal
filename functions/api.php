@@ -41,7 +41,7 @@ class API {
 	 * Get stake difficulty
 	 * */
 	public static function getStakeDifficulty() {
-		return self::execute(self::$base_cmd . self::$dcrd_certificate . "getstakedifficulty" . self::$end_cmd);
+		return json_decode(self::execute(self::$base_cmd . self::$dcrd_certificate . "getstakedifficulty" . self::$end_cmd))->{'current'};
 	}
 	 
 	 /**
