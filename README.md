@@ -1,5 +1,5 @@
 # pos-miner-portal
-Decred POS Miner Portal is a simple portal to display the balance and tickets for a POS miner node.
+*DISCONTINUED* - Decred POS Miner Portal is a simple portal to display the balance and tickets for a POS miner node.
 
 ###### Setup for Ubuntu 14.04
 
